@@ -39,6 +39,10 @@ public:
         // return ans;
         
         // more optimized using binary search
+        // idea bohot clear hai
+        // pehle ek vector me dono difficulty aur profit ke pair ko sort karo difficulty ke basis pe
+        // phir update karo har difficulty tak maximum profit ko
+        // phir har worker ke liye simple binary search laga do
         int n=difficulty.size();
         int m=worker.size();
         vector<pair<int,int>> t;
