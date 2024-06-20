@@ -1,7 +1,7 @@
 class Solution {
     // ye function batega ki kitne ball hai jinke beech ka magnetic force gap hai
 private:
-    int number_of_balls(vector<int> position,int gap){
+    int number_of_balls(vector<int>& position,int gap){
         // pehle ball hmesha hoga hi
         int current=position[0];
         int n_p=1;
