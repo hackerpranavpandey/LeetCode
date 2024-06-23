@@ -33,8 +33,11 @@ public:
         while(j<nums.size()){
             minpq.push({nums[j],j});
             maxpq.push({nums[j],j});
+            // agar ab tak ke index tak min aur max ka diff limit se jyada hai tab
             while(maxpq.top().first-minpq.top().first>limit){
+                // i ko directly j pe na jump karke jo bhi min aur max index me min hai uske ek aage 
                 i=min(maxpq.top().second,minpq.top().second)+1;
+                // ab heap me se wo sare hata do jisme index i se kam ke value hai
                 while(maxpq.top().second < i){
                     maxpq.pop();
                 }
