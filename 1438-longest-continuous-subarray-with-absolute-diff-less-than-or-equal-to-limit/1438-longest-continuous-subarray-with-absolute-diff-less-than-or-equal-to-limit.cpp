@@ -26,7 +26,7 @@ public:
         // jaise 1,3,7,6,4,0 if limit is 3
         // then ye 1 se directly 6 pe jump kar jaega 
         // but 3 pe karna chahiye tha
-        priority_queue<pair<int,int>,vector<pair<int,int>>> maxpq;
+        priority_queue<pair<int,int>> maxpq;
         priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> minpq;
         int i=0,j=0;
         int ans=0;
