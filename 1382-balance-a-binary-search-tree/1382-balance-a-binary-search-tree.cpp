@@ -20,11 +20,6 @@ public:
         sorted_array.push_back(root->val);
         Inorder(root->right);
     }
-    // now to construct balance BST
-    // just simple one logic use it recursively
-    // break the sorted array into two half and make mid as root
-    // root->left will be again for mid of first half
-    // root right for mid of second half
     TreeNode* constructBST(int start,int end){
         if(start>end)
             return nullptr;
