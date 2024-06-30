@@ -1,5 +1,6 @@
 class Solution {
     // so logic is simple at height 0,2,4 and so on use start color for add use second color
+    // call the function for both color and return max of them
 private:
     int heightMax(int start,int second){
         int height=0;
