@@ -11,9 +11,9 @@ public:
                     ans[i][j]=min(rowSum[i],colSum[j]);
                     rowSum[i]-=ans[i][j];
                     colSum[j]-=ans[i][j];
-                    if(rowSum[i]==0)
-                        break;
                 }
+                if(rowSum[i]==0)
+                    break;
             }
         }
         return ans;
