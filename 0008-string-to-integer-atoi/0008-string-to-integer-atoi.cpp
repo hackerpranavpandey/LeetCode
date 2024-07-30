@@ -29,11 +29,6 @@ public:
         }
         if(isNegative==true) // agar negative hai tab
             ans*=-1;
-        if(ans<INT_MIN)
-            return INT_MIN;
-        else if(ans>INT_MAX)
-            return INT_MAX;
-        else
-            return static_cast<int>(ans);
+        return static_cast<int>(ans);
     }
 };
