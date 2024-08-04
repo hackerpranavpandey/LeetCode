@@ -2,6 +2,9 @@ class Solution {
 public:
     int rangeSum(vector<int>& nums, int n, int left, int right) {
         vector<int> arr;
+        // for any index find all subarray possible till that index
+        // store the sum in arr
+        // then sort arr and return sum of values from index left-1 to right-1
         for(int i=0;i<n;i++){
             int sum=nums[i];
             arr.push_back(nums[i]);
