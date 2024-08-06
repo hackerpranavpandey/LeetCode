@@ -2,10 +2,10 @@ class Solution {
 public:
     int minimumPushes(string word) {
         // // first compute the frequency of each char in a mmap
-        unordered_map<char,int> freq_count;
-        for(char c:word){
-            freq_count[c]++;
-        }
+        // unordered_map<char,int> freq_count;
+        // for(char c:word){
+        //     freq_count[c]++;
+        // }
         // // then sort them after storing in a vector
         // // then simple for first 8 simply one push is needed
         // // for the next 8 two and so on 
@@ -34,9 +34,13 @@ public:
         // so lets use the concept of priority queue here however map is being used from above here too
         // so this is why using proper data structure is important
         // see problem choose the data structure that is important
+        vector<int> freq_count(26,0);
+        for(char c:word){
+            freq_count[c-'a']++;
+        }
         priority_queue<int> freq_order;
         for(auto it:freq_count){
-            freq_order.push(it.second);
+            freq_order.push(it);
         }
         int current_push=0;
         int ans=0;
