@@ -33,7 +33,7 @@ public:
         // above algorithm looks fine but using the greedy sorting is not good
         // so lets use the concept of priority queue here however map is being used from above here too
         // so this is why using proper data structure is important
-        // see problem choose the data structure that is important
+        // storing char using map is not preferred so using 26 size vector is fine
         vector<int> freq_count(26,0);
         for(char c:word){
             freq_count[c-'a']++;
