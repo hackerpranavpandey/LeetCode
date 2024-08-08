@@ -50,7 +50,6 @@ public:
                  swap(nums[i],nums[index]);
                 break;
             }
-             
         }
         sort(nums.begin()+index+1,nums.end());
     }
