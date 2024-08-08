@@ -1,6 +1,7 @@
 class Solution {
 public:
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+        // using simple concept of the merge sort with some extra or just the constant space
         vector<int> temp;
         int i_1=0;
         int i_2=0;
