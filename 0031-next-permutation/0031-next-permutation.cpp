@@ -44,13 +44,15 @@ public:
             reverse(nums.begin(),nums.end());
             return;
         }
-        //ab index se last tak ka next sabse bada value nikalna hai
+//ab index se last tak ka next sabse bada value nikalna hai
+// index+1 se last tak ek aisa value khojo jo nums[index] se bada ho aur index+1 ke baad smallest ho
         for(int i=n-1;i>index;i--){
             if(nums[i]>nums[index]){
                  swap(nums[i],nums[index]);
                 break;
             }
         }
+        // phir index+1 se end tak ko sort kardo
         sort(nums.begin()+index+1,nums.end());
     }
 };
