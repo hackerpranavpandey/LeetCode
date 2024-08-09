@@ -1,7 +1,18 @@
 class Solution {
     // below is a helper function that will be like
+    // passing the grid matrix by reference 
+    // then it will tell if from row_start to row_start+2, column_start to column_start+2
+    // the 3*3 matrix formed is a magic square or not
 private:
     bool magic_square(vector<vector<int>>& grid,int row_start,int col_start){
+        // find sum along any row_start
+        // then check for each row 
+        // similar for column then make a vector diff
+        // index from 0 to 9 each value as 0
+        // first check if grid[i][j] is between 0 and 9 
+        // then also check if diff[grid[i][j]]>0 this will help in knowing
+        // that all the values are from 1 to 9
+        // at end check for all the diagonals
         int sum=0;
         for(int i=col_start;i<col_start+3;i++){
             sum+=grid[row_start][i];
