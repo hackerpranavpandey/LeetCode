@@ -1,7 +1,6 @@
 class Solution {
 private:
     // helper function the return number of island in a grid
-    // using dfs
     int num_island(vector<vector<int>> grid){
         int n=grid.size();
         int m=grid[0].size();
