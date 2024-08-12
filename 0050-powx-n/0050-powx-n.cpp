@@ -1,10 +1,4 @@
 class Solution {
-// private:
-//     double Pow(double x,int n){
-//         if(n==0)
-//             return static_cast<double>(1);
-//         return x*Pow(x,n-1);
-//     }
 public:
     double myPow(double x, int n) {
         // if 2,4 then (2*2)*(2*2) works like 4*4 instead of 2 four times
@@ -20,6 +14,7 @@ public:
         long long exp=n;
         if(n<0){
             exp=-exp;
+            // divide double with double
             x=1.0/x;
         }
         while(exp>0){
