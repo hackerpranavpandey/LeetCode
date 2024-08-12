@@ -11,6 +11,7 @@ public:
         else if(x==0)
             return static_cast<double>(0);
         double ans=1.0;
+        // just for one edge case need to store in long long -2^31
         long long exp=n;
         if(n<0){
             exp=-exp;
