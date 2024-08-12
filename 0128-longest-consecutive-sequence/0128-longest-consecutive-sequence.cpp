@@ -15,8 +15,8 @@ public:
                  start=nums[i];
             }
             else if((nums[i]-1)>start){
-                start=nums[i];
                 ans=max(ans,cnt);
+                start=nums[i];
                 cnt=1;
             }
             i++;
