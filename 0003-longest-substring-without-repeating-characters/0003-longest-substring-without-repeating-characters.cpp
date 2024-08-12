@@ -1,7 +1,7 @@
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
-        // below is imaple way to do this question using O(n^2) time complexity
+        // below is simple way to do this question using O(n^2) time complexity
         int ans=0;
         int i=0;
         int n=s.size();
