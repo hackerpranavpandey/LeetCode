@@ -5,26 +5,23 @@ public:
         if(nums.size()==0)
             return 0;
         sort(nums.begin(),nums.end());
-        int start=0;
-        int end=1;
-        int ans=0;
-        int sub=0;
-        while(end<nums.size()){
-            if(nums[end-1]==nums[end])
-                end++,sub++;
-            else if((nums[end-1]+1)==nums[end])
-                end++;
-            else{
-                ans=max(ans,end-start-sub);
-                sub=0;
-                start=end;
-                end++;
+        int start=nums[0];
+        int ans=1;
+        int cnt=1;
+        int i=1;
+        while(i<nums.size()){
+            if(nums[i]==(start+1)){
+                 cnt++;
+                 start=nums[i];
             }
+            else if((nums[i]-1)>start){
+                start=nums[i];
+                ans=max(ans,cnt);
+                cnt=1;
+            }
+            i++;
         }
-        ans=max(ans,end-start-sub);
+        ans=max(ans,cnt);
         return ans;
-        // idea of sorting is wrong approach
-        // since it asked for the sequence
-        
     }
 };
