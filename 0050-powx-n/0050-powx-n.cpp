@@ -21,9 +21,12 @@ public:
         while(exp>0){
             if(exp%2==1){
                 ans=ans*x;
+                exp-=1;
             }
-            x*=x;
-            exp/=2;
+            else{
+                x*=x;
+                exp/=2;   
+            }
         }
         return ans;
     }
