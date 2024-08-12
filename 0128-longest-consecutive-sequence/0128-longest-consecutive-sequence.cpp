@@ -23,7 +23,6 @@ public:
         // }
         // ans=max(ans,cnt);
         // return ans;
-        // if value less than this is not present then only start searching for consecutive next number
         unordered_set<int> sequence;
         for(int num:nums){
             sequence.insert(num);
