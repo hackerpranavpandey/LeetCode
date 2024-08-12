@@ -9,6 +9,7 @@ public:
         int elem_1=INT_MIN,elem_2=INT_MIN;
         int n=nums.size();
         for(int i=0;i<n;i++){
+            // put rest all after if to else if
             if(cnt_1==0 && elem_2!=nums[i]){
                 cnt_1=1;
                 elem_1=nums[i];
