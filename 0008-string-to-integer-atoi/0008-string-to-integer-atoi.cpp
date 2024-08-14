@@ -29,6 +29,6 @@ public:
         }
         if(isNegative==true) // agar negative hai tab
             ans*=-1;
-        return static_cast<int>(ans);
+        return (int)(ans);
     }
 };
