@@ -6,6 +6,8 @@ public:
         // then there is a small check that for each arr[mid] check which part is sorted
         // then accodingly compare the sorted section with section and check if target is there
         // so there will be two condition that eithere left or right half will be sorted
+        // so it is like check first which part is sorted
+        // the  using that logic we can compare and check if it is in the left half or right half
         int low=0;
         int high=arr.size()-1;
         while(low<=high){
