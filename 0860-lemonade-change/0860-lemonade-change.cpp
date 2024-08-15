@@ -1,6 +1,8 @@
 class Solution {
 public:
     bool lemonadeChange(vector<int>& bills) {
+        if(bills[0]!=5)
+            return false;
         int coin_5=0,coin_10=0,coin_20=0;
         for(auto bill:bills){
             if(bill==5)
