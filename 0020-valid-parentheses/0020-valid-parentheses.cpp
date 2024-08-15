@@ -5,6 +5,7 @@ public:
         for(char c:s) {
             if(c=='(' || c=='[' || c=='{')
                 t.push(c);
+            // kuch nikalne se pehle ye check karo ki stack khali to nhi hai
             else{
                 if(t.empty())
                         return false;
