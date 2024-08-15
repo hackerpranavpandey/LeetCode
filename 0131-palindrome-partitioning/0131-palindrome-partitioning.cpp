@@ -18,6 +18,8 @@ private:
             // futher partition can only be done if it is a palindrome
             if(palindrome(s.substr(index,i-index+1))){
                 s_1.push_back(s.substr(index,i-index+1));
+                // dam i solved the bug for an hour 
+                // did index+1 instead of i+1
                 solve(s,ans,s_1,i+1,n);
                 s_1.pop_back();
             }
