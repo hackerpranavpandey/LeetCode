@@ -8,8 +8,7 @@ public:
             else{
                 if(t.empty())
                         return false;
-                if(c==')'){
-                    
+                if(c==')'){  
                     if(t.top()!='(')
                         return false;
                     t.pop();
