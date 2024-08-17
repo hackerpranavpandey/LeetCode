@@ -22,6 +22,7 @@ public:
         // above logic is correct but exceeds time limit
         // so now the idea is to maintain a vector that store the maxpoints for row
         // maintain a prev_row vector that tell the maximum till last row
+        // logic simple hai ki left se aaoge tab kitna lekar aaoge aur right se aaoge tab kitna
         vector<long long> prev_row(cols,-1);
         // doing it for first row
         for(int i=0;i<cols;i++){
