@@ -20,8 +20,6 @@ public:
         // return true;
         // above is correct but not a good way to write code
         // divide it will 2 till divisible
-        // similarly with 3 and 5
-        // if it is ugly number at end it would have become 1
         while(n%2==0)
             n=n/2;
         while(n%3==0)
