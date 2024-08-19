@@ -13,11 +13,9 @@ class Solution {
 public:
     bool isSameTree(TreeNode* p, TreeNode* q) {
         // base case
-        if(p==NULL && q==NULL)
+        if(!p && !q)
             return true;
-        else if(p==NULL && q!=NULL)
-            return false;
-        else if(p!=NULL && q==NULL)
+        else if((p && !q) || (!p && q))
             return false;
         else{
             // if both node value is same check left and right tree
