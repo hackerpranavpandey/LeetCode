@@ -9,12 +9,10 @@ private:
     // but if it exceeds n then return some large value sine need exactly n A
     if(s.size()>n)
         return 1000;
-    // copy then paste
     if(dp[s.size()][prev_copy.size()]!=0)
         return dp[s.size()][prev_copy.size()];
-    int p_1=2+solve(s,s+s,n);
-    // paste previous copy only
-    int p_2=1+solve(prev_copy,s+prev_copy,n);
+    int p_1=2+solve(s,s+s,n); // copy then paste
+    int p_2=1+solve(prev_copy,s+prev_copy,n);  // paste previous copy only
     dp[s.size()][prev_copy.size()]=min(p_1,p_2);
     return dp[s.size()][prev_copy.size()];
 }
