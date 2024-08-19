@@ -12,10 +12,14 @@
 class Solution {
 public:
     TreeNode* insertIntoBST(TreeNode* root, int val) {
+        // case when the root is itself null then simply create a newNode
+        // return the new created node
         if(root==NULL){
             TreeNode* newNode= new TreeNode(val);
             return newNode;
         }
+        // now there can be multiple binary tree possible but trying to insert at leaf node is simple
+        // and works well as there is simple intuition involved
         TreeNode* temp=root;
         while(temp!=NULL){
             if(temp->val>val){
