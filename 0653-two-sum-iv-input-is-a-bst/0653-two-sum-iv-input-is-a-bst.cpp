@@ -11,23 +11,29 @@
  */
 class Solution {
 private:
-    void inorder(TreeNode* root,unordered_set<int>& bst_val){
+    void inorder(TreeNode* root,vector<int>& bst_val){
         if(!root)
             return;
         else{
-            bst_val.emplace(root->val);
             inorder(root->left,bst_val);
+            bst_val.push_back(root->val);
             inorder(root->right,bst_val);
         }
     }
 public:
     bool findTarget(TreeNode* root, int k) {
-        unordered_set<int> bst_val;
+        vector<int> bst_val;
         inorder(root,bst_val);
-        for(auto it:bst_val){
-            int rem=k-it;
-            if(rem!=it && bst_val.find(rem)!=bst_val.end())
+        int n=bst_val.size();
+        int start=0,end=n-1;
+        while(start<end){
+            int sum=bst_val[start]+bst_val[end];
+            if(sum==k)
                 return true;
+            else if(sum>k)
+                end-=1;
+            else
+                start+=1;
         }
         return false;
     }
