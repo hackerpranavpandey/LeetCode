@@ -25,5 +25,37 @@ public:
         vector<int> ans;
         inorder(root,ans);
         return ans[k-1];
+        // TreeNode* curr=root;
+        // int count=0;
+        // int ans=-1;
+        // while(curr){
+        //     // case when there is no left tree
+        //     if(curr->left){
+        //         count++;
+        //         if(count==k-1){
+        //             ans=curr;
+        //             break;
+        //         }
+        //         curr=curr->right;
+        //     }
+        //     else{
+        //         TreeNode* temp=curr->left;
+        //         while(temp->left!=NULL && temp->right!=curr){
+        //             temp=temp->right;
+        //         }
+        //         if(temp->right==NULL){
+        //             temp->right=curr;
+        //             curr=curr->left;
+        //         }
+        //         else{
+        //             count++;
+        //             if(count==k-1){
+        //                 ans=curr;
+        //                 break;
+        //             }
+        //             temp->right=
+        //         }
+        //     }
+        // }
     }
 };
