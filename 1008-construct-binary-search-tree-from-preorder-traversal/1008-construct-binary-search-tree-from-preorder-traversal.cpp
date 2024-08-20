@@ -18,9 +18,14 @@ public:
         // so first value preorder vector is going to be the root of the BST that we want
         if(preorder.size()==0) // case when there is no node
             return NULL;
+        // since first value is guaranted to be root
         TreeNode* root=new TreeNode(preorder[0]);
         int n=preorder.size();
         for(int i=1;i<n;i++){
+            // now for all subsequent value
+            // create a new node
+            // inserting it at leaf node using the traverse technique
+            // using a extra parent node
             TreeNode* newNode=new TreeNode(preorder[i]);
             TreeNode* parent=NULL;
             TreeNode* temp=root;
