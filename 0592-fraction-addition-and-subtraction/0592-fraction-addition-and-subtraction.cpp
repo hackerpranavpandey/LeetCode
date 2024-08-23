@@ -24,6 +24,16 @@ private:
     }
 public:
     string fractionAddition(string expression) {
+        // so the idea is very simple first find the numerator and the denominator for each number
+        // then find lcm of denominators
+        // then like as normal mathematical conversion convert denominator to lcm 
+        // also correspondign numerator to the number 
+        // by multimplying it with num[i]*lcm/den[i]
+        // then sum all the numeratot then divide with hcf of summ and lcm 
+        // divide lcm also with the hcf
+        // if sum==0 return 0/1 
+        // else return sum/lcm
+        // stoi("-10") give -10 so no worry for the negative numbers
         vector<int> num,den;
         int i=0,n=expression.size();
         while(i<n){
