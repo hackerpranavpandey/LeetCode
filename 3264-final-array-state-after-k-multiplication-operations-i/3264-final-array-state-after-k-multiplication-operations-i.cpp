@@ -11,7 +11,7 @@ public:
             auto it=p_q.top();
             p_q.pop();
             int index=it.second;
-            int new_number=(int)((1LL*it.first*multiplier)%mod);
+            int new_number=(int)((1LL*it.first*multiplier)%mod); // incase it exceeds integer range
             p_q.push({new_number,index});
         }
         while(!p_q.empty()){
