@@ -1,6 +1,8 @@
 class Solution {
 public:
     double maxProbability(int n, vector<vector<int>>& edges, vector<double>& succProb, int start_node, int end_node) {
+        // so it is simple pplication of dijkstras algorithm
+        // instead of weight use probability and max heap instead of min heap
         // lets make adjacent list at first
         vector<pair<int,double>> adj[n];  // each adj[i] will have asjacent nodes and probability
         for(int i=0;i<edges.size();i++){
