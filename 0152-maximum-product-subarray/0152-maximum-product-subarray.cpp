@@ -14,7 +14,7 @@ public:
         // }
         // return ans;
         // lets use the concept of kadane algorithm
-        // but twice once from forwqrd another from backward
+        // but twice once from forward another from backward
         int max_value=INT_MIN;
         int prod=1;
         for(int num:nums){
