@@ -1,9 +1,10 @@
 class Solution {
 private:
-    // the task of this function is to count 
     bool part_of_island(vector<vector<int>>& grid1,vector<vector<int>>& grid2,int i ,int j){
         int m=grid1.size(),n=grid1[0].size();
         queue<pair<int,int>> t;
+        // index ko store karlo
+        // phir check karo ki grid1 me har index pe 1 hai ya nhi
         vector<pair<int,int>> index;
         t.push({i,j});
         while(!t.empty()){
