@@ -32,6 +32,10 @@ private:
     }
 public:
     bool isSubPath(ListNode* head, TreeNode* root) {
+        // logic of the code is that
+        // pehle level order traversal akro agar curr ka val head ke value ke barabar hai
+        // tab phir recursive function ko call karo left aur right dono node ke liye
+        // last me dono ka or return karo
         queue<TreeNode*> t;
         t.push(root);
         while(!t.empty()){
