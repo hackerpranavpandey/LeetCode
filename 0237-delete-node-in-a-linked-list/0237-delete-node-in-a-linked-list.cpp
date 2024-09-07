@@ -9,6 +9,7 @@
 class Solution {
 public:
     void deleteNode(ListNode* node) {
+        // value update karo aur last ke node ko delete kar do
         ListNode* prev=node;
         ListNode* current=node->next;
         while(current->next!=NULL){
