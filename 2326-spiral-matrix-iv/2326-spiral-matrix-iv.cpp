@@ -11,6 +11,8 @@
 class Solution {
 public:
     vector<vector<int>> spiralMatrix(int m, int n, ListNode* head) {
+        // so use the same concept used as the spiral matrix printing 
+        // four pointer approach and simple intuition
         vector<vector<int>> ans(m,vector<int>(n,-1));
         int top=0,bottom=m-1,left=0,right=n-1;
         while(head){
