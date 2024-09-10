@@ -14,7 +14,8 @@ private:
     TreeNode* construct_bst(vector<int>& preorder,int& i,int bound){
         if(i>=preorder.size() || preorder[i]>=bound)
             return NULL;
-        TreeNode* newNode= new TreeNode(preorder[i++]);
+        TreeNode* newNode= new TreeNode(preorder[i]);
+        i++;
         newNode->left=construct_bst(preorder,i,newNode->val);
         newNode->right=construct_bst(preorder,i,bound);
         return newNode;
