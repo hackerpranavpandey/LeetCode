@@ -11,6 +11,7 @@
 class Solution {
 private:
     // need to make sure that alway n_1 is greater then n_2 then only this function works
+    // using the logic of the euclidean hcf computation
     int gcd(int n_1,int n_2){
         if(n_1%n_2==0)
             return n_2;
