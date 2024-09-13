@@ -15,13 +15,24 @@ public:
         // }
         // return ans;
         // above code exceeds the memory limit
+        // vector<int> ans;
+        // for(vector<int> q:queries){
+        //     int x_or=0;
+        //     for(int i=q[0];i<=q[1];i++){
+        //         x_or^=arr[i];
+        //     }
+        //     ans.push_back(x_or);
+        // }
+        // return ans;
+        // above is a simple iterative approach which works fine tbut this canbe done in O(n)
+        int n=arr.size();
+        vector<int> xor_array(n+1,0);
+        for(int i=0;i<n;i++){
+            xor_array[i+1]=xor_array[i]^arr[i];
+        }
         vector<int> ans;
         for(vector<int> q:queries){
-            int x_or=0;
-            for(int i=q[0];i<=q[1];i++){
-                x_or^=arr[i];
-            }
-            ans.push_back(x_or);
+            ans.push_back(xor_array[q[1]+1]^xor_array[q[0]]);
         }
         return ans;
     }
