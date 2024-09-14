@@ -16,6 +16,7 @@ public:
         // above is a brute force approach
         // the bitwise and of any two value is strictly less than minimum of them
         // so the idea is to find the maximum value and its consectutive index size
+        // a single iteration is enough two pointer approach
         int max_value=0,n=nums.size();
         for(int i=0;i<n;i++){
             max_value=max(max_value,nums[i]);
