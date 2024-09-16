@@ -41,7 +41,7 @@ public:
         //     temp=temp->right;
         //     i++;
         // }
-        // above code is correct but no need to create new node this can be done recursively
+        // above code is correct but no need to create nodes again
         if(root==nullptr)
             return;
         flatten(root->right);
