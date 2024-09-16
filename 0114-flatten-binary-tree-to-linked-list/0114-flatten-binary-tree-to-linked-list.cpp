@@ -19,6 +19,7 @@ void preorder(TreeNode* root,vector<int>& node_values){
 }
 public:
     void flatten(TreeNode* root) {
+        // using extra space by storing the node value of preorder in a vector
         if(!root)
             return;
         vector<int> node_values;
