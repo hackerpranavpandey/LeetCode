@@ -4,6 +4,7 @@ public:
         // the idea to convert each to minutes and the sort array
         // only consider the case for difference between the first and last index
         // only case for the first and last index need to be considered
+        // so did correctly using own logic
         int i=0;
         for(string time:timePoints){
             if(time=="00:00")
