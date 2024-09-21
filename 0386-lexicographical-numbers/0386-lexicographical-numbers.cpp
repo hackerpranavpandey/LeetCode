@@ -11,6 +11,7 @@ private:
     }
 public:
     vector<int> lexicalOrder(int n) {
+        // actually very simple when think of recursion
         vector<int> ans;
         for(int i=1;i<=9;i++){
             solve(i,n,ans);   
