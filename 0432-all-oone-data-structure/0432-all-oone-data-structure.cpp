@@ -27,7 +27,7 @@ public:
         freq[t].erase(key);
         if(count[key]==0)
             count.erase(key);
-        if(t>1)
+        else
             freq[t-1].insert(key);
         if(freq[t].empty())
             freq.erase(t);
@@ -36,12 +36,14 @@ public:
     string getMaxKey() {
         if(count.empty())
             return "";
+        // iterator to retun from end set to any string
         return *(freq.rbegin()->second.begin());
     }
     
     string getMinKey() {
         if(count.empty())
             return "";
+        // return string from least freq set
         return *(freq.begin()->second.begin());
     }
 };
