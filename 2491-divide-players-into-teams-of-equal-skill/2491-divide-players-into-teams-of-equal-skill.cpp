@@ -6,7 +6,7 @@ public:
         for(auto it:skill){ 
             skill_sum+=it;
         }
-        if(skill_sum%(n/2) !=0 )
+        if(skill_sum%(n/2)!=0)
             return -1;
         int req_sum = skill_sum/(n/2);
         sort(skill.begin(),skill.end());
