@@ -4,6 +4,7 @@ public:
         // this question is similar to making the window size of n
         // then checking that is that substring anagram of p
         // and then add the first index of that to the ans vector
+        // each time freq_2 keeps only the frequency of characters in the window
         if(p.size()>s.size())
             return {};
         vector<int> freq_1(26,0),freq_2(26,0);
