@@ -27,7 +27,7 @@ private:
     }
 public:
     bool isSymmetric(TreeNode* root) {
-        // left subtree root,left,right traversal is equal to right subtree root,righ,left
+        // left subtree root,left,right traversal is equal to right subtree root,right,left
         if(!root)
             return true;
         return solve(root->left,root->right);
