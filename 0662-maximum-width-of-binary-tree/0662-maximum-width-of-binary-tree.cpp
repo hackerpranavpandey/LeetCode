@@ -12,7 +12,6 @@
 class Solution {
 public:
     int widthOfBinaryTree(TreeNode* root) {
-        // just simple level order traversal concepts
         if(!root)
             return 0;
         int ans=0;
