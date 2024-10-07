@@ -16,13 +16,27 @@ private:
 public:
     int minLength(string s) {
         // continuously remove till get the same string from the function
-        string s1;
-        while(true){
-            s1=remove(s);
-            if(s1==s)
-                break;
-            s=s1;
+        // another solution is use stack
+        // string s1;
+        // while(true){
+        //     s1=remove(s);
+        //     if(s1==s)
+        //         break;
+        //     s=s1;
+        // }
+        // return s1.size();
+        stack<char> t;
+        t.push(s[0]);
+        int n=s.size(),i=1;
+        while(i<n){
+            if(!t.empty() && s[i]=='B' && t.top()=='A')
+                t.pop();
+            else if(!t.empty() && s[i]=='D' && t.top()=='C')
+                t.pop();
+            else
+                t.push(s[i]);
+            i++;
         }
-        return s1.size();
+        return t.size();
     }
 };
