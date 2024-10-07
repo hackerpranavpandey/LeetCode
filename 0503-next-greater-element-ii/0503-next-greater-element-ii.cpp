@@ -1,6 +1,8 @@
 class Solution {
 public:
     vector<int> nextGreaterElements(vector<int>& nums) {
+        // first do dimple monotonic stack concept
+        // since nums[i] can be negative so cannot assign -1 to ans
         int n=nums.size();
         if(n==1)
             return {-1};
@@ -18,6 +20,10 @@ public:
                 ans[i]=monotonic.top();
             monotonic.push(nums[i]);
         }
+        // now for the case of circular order
+        // if ngl is not found then in that case
+        // look from index 0 to i th index
+        // first greater vaue will be ngl
         for(int i=n-1;i>=0;i--){
             if(ans[i]==INT_MIN){
                 for(int j=0;j<i;j++){
@@ -28,6 +34,7 @@ public:
                 }
             }
         }
+        // replace with -1
         for(int i=0;i<n;i++){
             if(ans[i]==INT_MIN)
                 ans[i]=-1;
