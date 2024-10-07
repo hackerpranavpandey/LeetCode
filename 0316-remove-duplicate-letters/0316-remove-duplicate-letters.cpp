@@ -4,11 +4,11 @@ public:
         int n=s.size();
         if(n==1)
             return s;
-        vector<int> index(26,0); //store the last index of each of char
+        vector<int> index(26,0);
         for(int i=0;i<n;i++){
             index[s[i]-'a']=i;
         }
-        vector<int> present(26,0); // to track if present char is already in the stack
+        vector<int> present(26,0);
         stack<char> t;
         t.push(s[0]);
         present[s[0]-'a']=1;
