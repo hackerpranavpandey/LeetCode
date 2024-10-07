@@ -1,6 +1,10 @@
 class Solution {
 public:
     string removeDuplicateLetters(string s) {
+        // now so easy use the logic if already present no need to insert
+        // if greater that t.top() directly insert directly else check if it is present later
+        // and current s[i] is less than t.top() then pop till it is possible to get later
+        // also check for s[i] should be less than t.top()
         int n=s.size();
         if(n==1)
             return s;
@@ -12,10 +16,6 @@ public:
         stack<char> t;
         t.push(s[0]);
         present[s[0]-'a']=1;
-        // now so easy use the logic if already present no need to insert
-        // if greater that t.top() directly insert directly else check if it is present later
-        // and current s[i] is less than t.top() then pop till it is possible to get later
-        // also check for s[i] should be less than t.top()
         for(int i=1;i<n;i++){
             if(present[s[i]-'a'])
                 continue;
