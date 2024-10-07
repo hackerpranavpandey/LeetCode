@@ -25,18 +25,18 @@ public:
         //     s=s1;
         // }
         // return s1.size();
-        stack<char> t;
-        t.push(s[0]);
+        stack<char> s_t;
+        s_t.push(s[0]);
         int n=s.size(),i=1;
         while(i<n){
-            if(!t.empty() && s[i]=='B' && t.top()=='A')
-                t.pop();
-            else if(!t.empty() && s[i]=='D' && t.top()=='C')
-                t.pop();
+            if(!s_t.empty() && s[i]=='B' && s_t.top()=='A')
+                s_t.pop();
+            else if(!s_t.empty() && s[i]=='D' && s_t.top()=='C')
+                s_t.pop();
             else
-                t.push(s[i]);
+                s_t.push(s[i]);
             i++;
         }
-        return t.size();
+        return s_t.size();
     }
 };
