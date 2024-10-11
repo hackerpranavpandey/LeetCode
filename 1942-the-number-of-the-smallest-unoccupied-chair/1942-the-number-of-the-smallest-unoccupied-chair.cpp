@@ -1,6 +1,23 @@
 class Solution {
 public:
     int smallestChair(vector<vector<int>>& times, int targetFriend) {
+        int targetArrival=times[targetFriend][0];
+        sort(times.begin(),times.end());
+        int n=times.size();
+        vector<int> chairIndex(n,0);  // isme har index ke liye kab tak chair booked hai ye rahega
+        for(int i=0;i<n;i++){
+            for(int j=0;j<=i;j++){
+                // agar piche ke index ke chair ka leaving time abhi ke arrival se kam hai
+                if(chairIndex[j]<=times[i][0]){
+                    // wo chair abhi ke friend ko mil jaega
+                     chairIndex[j]=times[i][1];
+                     if(times[i][0]==targetArrival)
+                        return j;
+                      break;   
+                }
+            }
+        }
+        return 0;
         // int arrivaltargetFriend=times[targetFriend][0];
         // sort(times.begin(),times.end());
         // priority_queue<int,vector<int>,greater<int>> vacant;
@@ -27,21 +44,5 @@ public:
         //     chairIndex[i]=chair;
         // }
         // return ans;
-        // lets try brute force approach first
-        int targetArrival=times[targetFriend][0];
-        sort(times.begin(),times.end());
-        int n=times.size();
-        vector<int> chairIndex(n,0);  // isme har index ke liye kab tak chair booked hai ye rahega
-        for(int i=0;i<n;i++){
-            for(int j=0;j<=i;j++){
-                if(chairIndex[j]<=times[i][0]){
-                     chairIndex[j]=times[i][1];
-                     if(times[i][0]==targetArrival)
-                        return j;
-                      break;   
-                }
-            }
-        }
-        return 0;
     }
 };
