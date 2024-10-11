@@ -19,13 +19,15 @@ public:
         //     }
         // }
         // return 0;
+        // min heap hai jisme stored hai {departure time,Chair_number}
         priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> leavingChair;
         int targetArrival = times[targetFriend][0];
         sort(times.begin(),times.end());
         int nextChair=0;
-        set<int> availableChair;
+        set<int> availableChair;  // abhi ke vacant chairs
         for(auto time:times){
             int arrival=time[0],departure=time[1];
+            // if possible to make chair available
             while(!leavingChair.empty() && leavingChair.top().first<=arrival){
                 availableChair.insert(leavingChair.top().second);
                 leavingChair.pop();
