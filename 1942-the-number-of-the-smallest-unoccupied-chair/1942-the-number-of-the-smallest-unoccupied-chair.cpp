@@ -33,7 +33,7 @@ public:
         int n=times.size();
         vector<int> chairIndex(n,0);  // isme har index ke liye kab tak chair booked hai ye rahega
         for(int i=0;i<n;i++){
-            for(int j=0;j<n;j++){
+            for(int j=0;j<=i;j++){
                 if(chairIndex[j]<=times[i][0]){
                      chairIndex[j]=times[i][1];
                      if(times[i][0]==targetArrival)
