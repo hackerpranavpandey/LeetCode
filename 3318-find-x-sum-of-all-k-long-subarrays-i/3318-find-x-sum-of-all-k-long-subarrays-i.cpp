@@ -1,29 +1,28 @@
 class Solution {
-private:
-    static bool comp(pair<int,int>& a,pair<int,int>& b){
-        if(a.first==b.first)
-            return a.second > b.second;
-        return a.first > b.first;
-    }
 public:
     vector<int> findXSum(vector<int>& nums, int k, int x) {
-        // need to typecast (int)v1.size() sice it returns of type size_t
         int n=nums.size();
         vector<int> ans(n-k+1,0);
-        for(int i=0;i<n-k+1;i++){
-            unordered_map<int,int> freq;
-            for(int j=i;j<i+k;j++){
-                freq[nums[j]]++;
+        priority_queue<pair<int,int>> t;
+        unordered_map<int,int> freqCount;
+        for(int i=0;i<k;i++){
+            freqCount[nums[i]]++;
+        }
+        for(int i=0 ;i<=n-k ;i++){
+            t = priority_queue<pair<int,int>>();
+            for(auto it:freqCount){
+                t.push({it.second,it.first});
             }
-            vector<pair<int,int>> v1;
-            for(auto it:freq){
-                v1.push_back({it.second,it.first});
-            }
-            sort(v1.begin(),v1.end(),comp);
             int xSum=0;
-            for(int j=0;j<min(x,(int)v1.size());j++){
-                xSum+=(v1[j].first*v1[j].second);
+            for(int j=0;j<x && !t.empty() ;j++){
+                xSum+=(t.top().first*t.top().second);
+                t.pop();
             }
+            freqCount[nums[i]]--;
+            if(freqCount[nums[i]]==0)
+                    freqCount.erase(nums[i]);
+            if(i<n-k)
+                freqCount[nums[i+k]]++;
             ans[i]=xSum;
         }
         return ans;
