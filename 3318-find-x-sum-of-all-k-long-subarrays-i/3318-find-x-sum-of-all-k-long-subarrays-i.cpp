@@ -7,6 +7,7 @@ private:
     }
 public:
     vector<int> findXSum(vector<int>& nums, int k, int x) {
+        // need to typecast (int)v1.size() sice it returns of type size_t
         int n=nums.size();
         vector<int> ans(n-k+1,0);
         for(int i=0;i<n-k+1;i++){
