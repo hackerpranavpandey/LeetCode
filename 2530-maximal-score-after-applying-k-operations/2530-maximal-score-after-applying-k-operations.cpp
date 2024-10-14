@@ -1,6 +1,7 @@
 class Solution {
 public:
     long long maxKelements(vector<int>& nums, int k) {
+        // damn simple just use priority queue
         long long ans=0;
         priority_queue<int> storeNum;
         int n=nums.size();
