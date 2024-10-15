@@ -1,10 +1,7 @@
 class Solution {
 public:
     long long minimumSteps(string s) {
-        // just a simple 2 pointer approach
-        // if s[i]=='0' move ahead till 1 is observed
-        // if s[j]=='1' then move back till '0' is observed
-        // if got stuck then swap once
+        // only adjacent swaps are allowed
         // int n=s.size();
         // int i=0,j=n-1;
         // long long countSwap=0;
