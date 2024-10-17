@@ -14,6 +14,7 @@ public:
                 maxRightIndex[i]=maxRightIndex[i+1];
         }
         for(int i=0;i<n;i++){
+            // also check if same digits are not swapped
             if(maxRightIndex[i]!=i && t[i]!=t[maxRightIndex[i]]){
                 swap(t[i],t[maxRightIndex[i]]);
                 return stoi(t);
