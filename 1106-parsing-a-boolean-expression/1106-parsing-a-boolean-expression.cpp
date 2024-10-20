@@ -20,6 +20,8 @@ private:
     }
 public:
     bool parseBoolExpr(string expression) {
+        // maintain two different stack for optr and operand
+        // whnever a closing bracket is there then perform operation and at last pop
         stack<char> opr;
         stack<char> operand;
         int n=expression.size();
