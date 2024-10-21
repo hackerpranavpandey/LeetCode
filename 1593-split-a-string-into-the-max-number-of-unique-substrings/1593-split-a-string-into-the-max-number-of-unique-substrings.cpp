@@ -1,5 +1,6 @@
 class Solution {
 private:
+    // so this is simple backtracking approach that has been used
     int maxSplit(string& s, int index, unordered_set<string>& unique){
         if(index==s.size())
             return 0;
