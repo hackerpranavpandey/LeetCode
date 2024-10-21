@@ -1,16 +1,15 @@
 class Solution {
 private:
-    // so this is simple backtracking approach that has been used
-    int maxSplit(string& s, int index, unordered_set<string>& unique){
-        if(index==s.size())
+    int maxSplit(string& s,int t, unordered_set<string>& splitString){
+        if(t==s.size())
             return 0;
         int ans=0;
-        for(int last=index+1; last<=s.size() ; last++){
-            if(unique.find(s.substr(index,last-index))==unique.end()){
-                unique.insert(s.substr(index,last-index));
-                ans=max(ans,1+maxSplit(s,last,unique));
-                unique.erase(s.substr(index,last-index));
-            }
+        for(int last=t+1; last<= s.size(); last++){
+           if(!splitString.count(s.substr(t,last-t))){
+               splitString.insert(s.substr(t,last-t));
+               ans=max(ans,1+maxSplit(s,last,splitString));
+               splitString.erase(s.substr(t,last-t));
+           }
         }
         return ans;
     }
@@ -34,7 +33,8 @@ public:
         //     index+=count;
         // }
         // return ans+1;
-        unordered_set<string> unique;
-        return maxSplit(s,0,unique);
+        unordered_set<string> splitString;
+        int ans= maxSplit(s,0,splitString);
+        return ans;
     }
 };
