@@ -12,8 +12,10 @@
 class Solution {
 public:
     long long kthLargestLevelSum(TreeNode* root, int k) {
-        vector<long long> levelSum;
+        // damn it's just simple level order traversal
+        // vector<long long> levelSum;  // priority queue is better to use
         queue<TreeNode*> t;
+        priority_queue<long long,vector<long long>,greater<long long>> levelSum;
         t.push(root);
         while(!t.empty()){
             int n=t.size();
@@ -27,11 +29,15 @@ public:
                 if(curr->right)
                     t.push(curr->right);
             }
-            levelSum.push_back(sum);
+            if(levelSum.size() < k)
+                levelSum.push(sum);
+            else if(levelSum.top() < sum){
+                levelSum.pop();
+                levelSum.push(sum);
+            }
         }
         if(levelSum.size()<k)
             return -1;
-        sort(levelSum.begin(),levelSum.end(),greater<long long>());
-        return levelSum[k-1];
+        return levelSum.top();
     }
 };
