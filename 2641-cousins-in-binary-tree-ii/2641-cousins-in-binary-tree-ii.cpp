@@ -12,7 +12,6 @@
 class Solution {
 public:
     TreeNode* replaceValueInTree(TreeNode* root) {
-        // this problemis nothing but using bfs twice
         // first store the sum of the nodes in each of the level
         // for level 0 and 1 value will be 0 for each of the node
         // then for each node update the value of its child considering 3 conditions
