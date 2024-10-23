@@ -14,6 +14,9 @@ public:
     TreeNode* replaceValueInTree(TreeNode* root) {
         // damn its so simple just levelorder traversal and sum computation
         // first store the sum of the nodes in each of the level
+        // for level 0 and 1 value will be 0 for each of the node
+        // then for each node update the value of its child considering 3 conditions
+        // when there is both child present , only left and only right
         unordered_map<int,long long> levelSum;
         queue<TreeNode*> t;
         t.push(root);
@@ -35,7 +38,6 @@ public:
         }
         level=0;
         t.push(root);
-        // now update the value of each node
         while(!t.empty()){
             int n=t.size();
             for(int i=0;i<n;i++){
@@ -43,19 +45,16 @@ public:
                 t.pop();
                 if(level==0 || level==1)
                     it->val=0;
-                // if both child exist then update both of them value
                 if(it->left && it->right){
                     int sibling = it->left->val + it->right->val;
                     it->left->val=levelSum[level+1]- sibling;
                     it->right->val=levelSum[level+1] - sibling;
                     t.push(it->left),t.push(it->right);
                 }
-                // in case only left child exist
                 else if(it->left && !it->right){
                     it->left->val=levelSum[level+1] - it->left->val;
                     t.push(it->left);
                 }
-                // in case only right child exits
                 else if(!it->left && it->right){
                     it->right->val=levelSum[level+1] - it->right->val;
                     t.push(it->right);
