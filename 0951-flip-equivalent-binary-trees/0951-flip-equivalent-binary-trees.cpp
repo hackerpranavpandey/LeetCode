@@ -102,7 +102,6 @@ public:
         // if(t1.size()!=t2.size())
         //     return false;
         // return true;
-        bool ans=flip(root1,root2);
-        return ans;
+        return flip(root1,root2);
     }
 };
