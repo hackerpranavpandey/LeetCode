@@ -12,6 +12,7 @@
 class Solution {
 public:
     bool flipEquiv(TreeNode* root1, TreeNode* root2) {
+        // damn iterarive way of solving this question
         if(!root1 && !root2)
             return true;
         if((!root1 && root2) || (root1 && !root2))
