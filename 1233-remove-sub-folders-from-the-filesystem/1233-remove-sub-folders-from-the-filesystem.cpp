@@ -1,6 +1,10 @@
 class Solution {
 public:
     vector<string> removeSubfolders(vector<string>& folder) {
+        // sort the folder array first and maintain a currFolder as folder[0]
+        // if folder[i] size is less than currFolder
+        // if size is equal then since uniqueue folder are only present
+        // if greater then either first cmp size is not equal to currFolder or next char is not '/'
         sort(folder.begin(),folder.end());
         vector<string> ans;
         int n=folder.size();
