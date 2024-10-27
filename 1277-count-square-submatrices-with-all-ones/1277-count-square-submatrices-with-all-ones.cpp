@@ -9,7 +9,7 @@ private:
             int colStart=0,colEnd=t1-1;
             while(colEnd<n){
                 int count=0;
-                // is anyone element if found to be zero then break both loop
+                // is anyone element if found to be zero then break both loop else it was exceeding time limit
                 for(int t=rowStart;t<=rowEnd;t++){
                     for(int z=colStart;z<=colEnd;z++){
                        if(matrix[t][z])
@@ -32,7 +32,7 @@ private:
     }
 public:
     int countSquares(vector<vector<int>>& matrix) {
-        // one way to count all possible square from size 1 to min(m,n) but it exceeded time limit
+        // one way to count all possible square from size 1 to min(m,n)
         int m=matrix.size();
         int n=matrix[0].size();
         int ans=0;
