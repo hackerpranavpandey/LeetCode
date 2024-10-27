@@ -9,7 +9,6 @@ private:
             int colStart=0,colEnd=t1-1;
             while(colEnd<n){
                 int count=0;
-                // is anyone element if found to be zero then break both loop else it was exceeding time limit
                 for(int t=rowStart;t<=rowEnd;t++){
                     for(int z=colStart;z<=colEnd;z++){
                        if(matrix[t][z])
