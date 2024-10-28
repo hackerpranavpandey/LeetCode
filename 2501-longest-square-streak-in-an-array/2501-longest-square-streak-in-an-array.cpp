@@ -1,6 +1,10 @@
 class Solution {
 public:
     int longestSquareStreak(vector<int>& nums) {
+        // so below are two ways to do this
+        // one is sinmply generate all possible subsequences and check
+        // another is since maximum possible is 5 so for each element square it four times
+        // and check if found continue update ans also if it exceeds integer then break
         // int ans=-1;
         // int n=nums.size();
         // long long t=pow(2,n);
