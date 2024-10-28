@@ -1,10 +1,7 @@
 class Solution {
 public:
     int longestSquareStreak(vector<int>& nums) {
-        // so below are two ways to do this
-        // one is sinmply generate all possible subsequences and check
-        // another is since maximum possible is 5 so for each element square it four times
-        // and check if found continue update ans also if it exceeds integer then break
+        // time limit exceeds for this
         // int ans=-1;
         // int n=nums.size();
         // long long t=pow(2,n);
@@ -27,6 +24,7 @@ public:
         //         ans=max(ans,t);
         // }
         // return ans;
+        // for this simply check till 5 more square if present in nums or not also it should be int
         unordered_set<int> t;
         for(int &num:nums){
             t.insert(num);
