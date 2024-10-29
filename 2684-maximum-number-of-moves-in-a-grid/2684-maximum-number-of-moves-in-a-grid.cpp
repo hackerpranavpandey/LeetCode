@@ -20,6 +20,9 @@ private:
 public:
     int maxMoves(vector<vector<int>>& grid) {
         // observe that it always has to move to the next column
+        // so for each row start at first column to max ans
+        // just try using the dp 2-d array for this
+        // for each grid[row][col] only 3 ways are possible with some ans
         int n=grid.size(),m=grid[0].size();
         vector<vector<int>> dp(n,vector<int>(m,-1));
         int ans=0;
