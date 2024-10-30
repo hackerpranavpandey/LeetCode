@@ -12,17 +12,16 @@ public:
                     lis[i]=max(lis[i],lis[j]+1);
             }
         }
-        reverse(nums.begin(),nums.end());
-        for(int i=0;i<n;i++){
-            for(int j=0;j<i;j++){
+        for(int i=n-1;i>=0;i--){
+            for(int j=i+1;j<n;j++){
                 if(nums[i]>nums[j])
                     lds[i]=max(lds[i],lds[j]+1);
             }
         }
-        int ans=n;
+        int ans=INT_MAX;
         for(int i=0;i<n;i++){
-            if(lis[i]>1 && lds[n-i-1]>1)
-                ans=min(ans,n+1-lis[i]-lds[n-1-i]);
+            if(lis[i]>1 && lds[i]>1)
+                ans=min(ans,n+1-lis[i]-lds[i]);
         }
         return ans;
     }
