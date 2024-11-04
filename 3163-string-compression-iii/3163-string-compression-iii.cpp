@@ -17,10 +17,10 @@ public:
                 count=1;
             }
             index++;
-            // if exactly nine then
             if(count==9 && index!=n){
                 ans+=(to_string(count)+c);
                 count=0;
+                // if exactly 9 then it will insert extra 0 and corresponding char
                 if(word[index]!=c){
                     c=word[index];
                     count=1;
