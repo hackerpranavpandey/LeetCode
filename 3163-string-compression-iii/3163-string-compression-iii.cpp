@@ -2,8 +2,6 @@ class Solution {
 public:
     string compressedString(string word) {
         int n=word.size();
-        if(n==1)
-            return (to_string(1)+word);
         string ans="";
         char c=word[0];
         int index=1;
