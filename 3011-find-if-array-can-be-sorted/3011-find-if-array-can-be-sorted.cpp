@@ -18,6 +18,9 @@ private:
     }
 public:
     bool canSortArray(vector<int>& nums) {
+        // store set bit for O(1) access
+        // then check if it is not sorted if it is possible to swap then do repeat 
+        // if it is not sorted and no swap possible then just return false
         unordered_map<int,int> t;
         for(int &num:nums){
             t[num]=set_bit(num);
