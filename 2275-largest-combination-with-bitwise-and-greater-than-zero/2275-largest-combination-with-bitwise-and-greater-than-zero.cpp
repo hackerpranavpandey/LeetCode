@@ -1,19 +1,19 @@
 class Solution {
 public:
     int largestCombination(vector<int>& candidates) {
-        vector<int> storeBit(32,0);
-        for(auto& candidate:candidates){
-            int i=0;
-            while(candidate){
-                if(1 & candidate)
-                    storeBit[i]++;
-                candidate=candidate>>1;
-                i++;
+        vector<int> scoreBit(32,0);
+        for(int i=0;i<candidates.size();i++){
+            int j=0;
+            while(candidates[i]>0){
+                if(candidates[i]&1)
+                    scoreBit[j]++;
+                j++;
+                candidates[i]>>=1;
             }
         }
         int ans=0;
-        for(int i=0;i<32;i++){
-            ans=max(ans,storeBit[i]);
+        for(auto &it:scoreBit){
+            ans=max(ans,it);
         }
         return ans;
     }
