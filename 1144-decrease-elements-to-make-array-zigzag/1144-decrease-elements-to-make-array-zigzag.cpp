@@ -1,16 +1,25 @@
 class Solution {
 public:
-    int find(vector<int>& nums,int j){
-        int n = 0;
-        for(int i = j; i<nums.size();i+=2){
-            int l = 0;
-            if(i-1>=0 && nums[i-1]<=nums[i]) l = max(l,abs(nums[i]-nums[i-1])+1);
-            if(i+1<nums.size() && nums[i+1]<=nums[i]) l = max(l,abs(nums[i]-nums[i+1])+1);
-            n+=l;
-        }
-        return n;
-    }
     int movesToMakeZigzag(vector<int>& nums) {
-        return min(find(nums,0),find(nums,1));
+        int even=0,odd=0;
+        for(int i=0;i<nums.size();i++){
+            if(i%2==0){
+                int t=0;
+                if(i-1>=0 && nums[i-1]<=nums[i])
+                    t=(nums[i]-nums[i-1]+1);
+                if(i+1<nums.size() && nums[i]>=nums[i+1])
+                    t=max(t,nums[i]-nums[i+1]+1);
+                even+=t;
+            }
+            else{
+                int t=0;
+                if(i-1>=0 && nums[i-1]<=nums[i])
+                    t=(nums[i]-nums[i-1]+1);
+                if(i+1<nums.size() && nums[i]>=nums[i+1])
+                    t=max(t,nums[i]-nums[i+1]+1);
+                odd+=t;
+            }
+        }
+        return min(even,odd);
     }
 };
