@@ -1,7 +1,7 @@
 class Solution {
 public:
     int largestCombination(vector<int>& candidates) {
-        vector<int> storeBit(32,0); // to store the bits conversion of all numbers
+        vector<int> storeBit(32,0);
         for(auto& candidate:candidates){
             int i=0;
             while(candidate){
