@@ -14,8 +14,6 @@ public:
 
         for (int right = 0; right < s.size(); right++) {
             window[s[right] - 'a']++;
-
-            // Shrink window if we take too many characters
             while (left <= right &&
                    (t[0] - window[0] < k || t[1] - window[1] < k ||
                     t[2] - window[2] < k)) {
