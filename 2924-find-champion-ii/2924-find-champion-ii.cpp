@@ -1,7 +1,6 @@
 class Solution {
 public:
     int findChampion(int n, vector<vector<int>>& edges) {
-        // there is only one node wit indegree 0 else -1
         unordered_map<int,int> indegree;
         for(vector<int> edge:edges){
             int u=edge[0],v=edge[1];
