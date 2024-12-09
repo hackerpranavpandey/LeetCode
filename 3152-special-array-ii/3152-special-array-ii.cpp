@@ -2,9 +2,8 @@ class Solution {
 public:
     vector<bool> isArraySpecial(vector<int>& nums, vector<vector<int>>& queries) {
         // simple logic of using the array number they belongs to
-        // just got this idea after reading the hints
-        unordered_map<int,int> t;
         // values can be same so use index as key
+        unordered_map<int,int> t;
         t[0]=0;
         int n=nums.size();
         for(int i=1;i<n;i++){
