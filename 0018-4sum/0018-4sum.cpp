@@ -38,6 +38,7 @@ private:
     }
 public:
     vector<vector<int>> fourSum(vector<int>& nums, int target) {
+        // however this is 4 sum but can be exteded to any sum algorithm
         sort(nums.begin(),nums.end());
         return kSum(nums,target,0,4);
     }
