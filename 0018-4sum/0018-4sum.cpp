@@ -19,6 +19,7 @@ private:
         }
         return ans;
     }
+    // simpl two sum function
     vector<vector<int>> twosum(vector<int>& nums,long long target,int start){
         vector<vector<int>> ans;
         int left=start, right=nums.size()-1;
