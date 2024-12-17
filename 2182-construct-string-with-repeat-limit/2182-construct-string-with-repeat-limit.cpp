@@ -1,6 +1,7 @@
 class Solution {
 public:
     string repeatLimitedString(string s, int repeatLimit) {
+        // just simple use map + priority_queue
         unordered_map<char,int> freq_count;
         for(char c:s){
             freq_count[c]++;
@@ -23,6 +24,7 @@ public:
                     ans+=curr.first;
                 }
                 curr.second-=repeatLimit;
+                // here is important step if no char is left then present is largest lexicographically possible
                 if(lexico_order.empty())
                     return ans;
                 pair<char,int> curr_2=lexico_order.top();
