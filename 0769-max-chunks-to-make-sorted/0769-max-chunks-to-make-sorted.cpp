@@ -7,6 +7,7 @@ public:
         int curr_max=arr[0];
         bool find=false;
         int index=0;
+        // find find till 0 is inserted and size of stack should be equal to maximum value inserted
         while(!(st.size()==(curr_max+1) && find)){
             st.push(arr[index]);
             curr_max=max(curr_max,arr[index]);
@@ -17,6 +18,7 @@ public:
         while(!st.empty()){
             st.pop();
         }
+        // now after that keep adding 1 to ans till curr_max and prev_max difference equals size of stack
         int prev_max=curr_max;
         for(int i=index;i<n;i++){
             st.push(arr[i]);
