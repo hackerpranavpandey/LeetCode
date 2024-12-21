@@ -17,7 +17,7 @@ public:
 class Solution {
 public:
     Node* copyRandomList(Node* head) {
-        // this is O(2N) time as well as space we cannot assign random f the node has not been created
+        // this is O(2N) time as well as space we cannot assign random if the node has not been created
         // one way to avoid this is insert newnode in between then traverse again
         unordered_map<Node*,Node*> mpp;
         Node* temp=head;
